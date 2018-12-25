@@ -1,0 +1,19 @@
+{
+    "name": "naka1205/phpkoa_static",
+    "description": "phpkoa static",
+    "type": "library",
+    "authors": [
+        {
+            "name": "naka507",
+            "email": "171453643@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Naka507\\Koa\\": "src/"
+        }
+    }
+}
