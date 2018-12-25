@@ -103,7 +103,7 @@ class StaticFiles implements Middleware
     public function __construct( $path = "./static")
     {
         if ( !is_dir($path) ) {
-
+            throw new \RuntimeException("static path error");
         }
         $this->path = $path;
     }
@@ -142,7 +142,7 @@ class StaticFiles implements Middleware
                 $extension = isset($file_info['extension']) ? $file_info['extension'] : '';
                 $file_name = isset($file_info['filename']) ? $file_info['filename'] : '';
                 $ctx->status = 200;
-                $ctx->length = $file_size;
+
                 if ($modified_time) {
                     $ctx->lastModified = $modified_time;
                 }
