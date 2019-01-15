@@ -110,7 +110,6 @@ class StaticFiles implements Middleware
 
     public function __invoke(Context $ctx, $next)
     {
-        yield $next;
         $url_info = parse_url('http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
         if ( !$url_info ) {
             $ctx->status = 404;
@@ -155,7 +154,7 @@ class StaticFiles implements Middleware
             }
         }
 
-
+        yield $next;
     }
 
 }
